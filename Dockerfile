@@ -1,5 +1,9 @@
-FROM node:19-bullseye
+FROM ubuntu
+RUN apt-get update -y
+RUN apt install nodejs -y
+RUN apt install npm -y
+RUN apt install docker.io -y
 COPY ./package.json .
-COPY ./proxy.js .
-CMD ["npm", "install"]
-CMD ["node", "proxy.js"]
+COPY ./app ./app
+RUN npm install
+ENTRYPOINT ["node", "./app/main.js"]

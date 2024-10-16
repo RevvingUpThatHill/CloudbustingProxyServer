@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.21.1",
     "http-proxy": "^1.18.1"
-  }
+  },
+  "type": "module"
 }
